@@ -6,14 +6,27 @@ public class Main {
         // for forbid to do so: Settings mySettings = new Settings();
         //we make privet constructor
         System.out.println("line1");
-        Settings mySettings = Settings.getInstance(); //was created instance settings
-        mySettings.setGameName("game1");
         testSingleton();
         System.out.println("line2");
     }
 
     private static void testSingleton() {
-        System.out.println(Settings.getInstance().getGameName());
+        System.out.println(Settings.getGameName());
+
+//        Thread t1 = new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                Settings.getInstance();
+//            }
+//        });
+//        Thread t2 = new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                Settings.getInstance();
+//            }
+//        });
+//        t1.start(); t2.start();
+
     }
 
 }

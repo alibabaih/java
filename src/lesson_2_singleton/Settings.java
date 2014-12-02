@@ -1,25 +1,35 @@
 package lesson_2_singleton;
 
 public class Settings {
-    //lazy sigleton
-    public static final Settings INSTANCE = new Settings();
+    //non-lazy sigleton
+    //public static Settings INSTANCE = null;
 
-    private static String gameName;
+    private static final String GAME_NAME = "mario";
+
+    private int playersCount;
 
     //for not lazy singleton need to write getter
     public static Settings getInstance() {
-        return Settings.INSTANCE;
+//        if (INSTANCE == null){
+//            INSTANCE = new Settings();
+//        }
+        return SettingsInstanceHolder.INSTANCE;
     }
 
-    public String getGameName() {
-        return gameName;
+    public static String getGameName() {
+        return GAME_NAME;
     }
 
-    public void setGameName(String gameName) {
-        this.gameName = gameName;
-    }
-
-    private Settings() {
+     Settings() {
         System.out.println("In settings ");
+    }
+
+    //instead SettingsInstanceHolder.java
+    public static class SettingsInstanceHolder {
+
+        private static Settings INSTANCE = new Settings();
+
+        private SettingsInstanceHolder() {}
+
     }
 }

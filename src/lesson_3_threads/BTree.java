@@ -44,3 +44,4 @@ public class BTree<T extends Comparable<T>> implements IBTree<T> { //binary tree
         }
     }
 }
+//24 min. http://hexlet.org/lesson/java_102_3/

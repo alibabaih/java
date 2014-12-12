@@ -14,11 +14,27 @@ public class Worker1 extends Thread {
     @Override
     public void run() {
         //super.run();
-        for (int i = 0; i < 5; i++) {
-            if (id == 1) {
-                data.Tic();
-            } else {
-                data.Tak();
+        synchronized (data) {
+            for (int i = 0; i < 5; i++) {
+                if (id == 1 && id == data.getState()) {
+                    data.Tic();
+                    notify();
+                } else if (id == 1) {
+                    try {
+                        wait();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                } if (id == 2 && id == data.getState()) {
+                    data.Tak();
+                    notify();
+                } else if (id == 2) {
+                    try {
+                        wait();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
         }
     }

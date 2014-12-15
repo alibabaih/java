@@ -1,4 +1,4 @@
-package demo6;
+package demo_multithread.demo6;
 
 public class Data {
     private int state=1;

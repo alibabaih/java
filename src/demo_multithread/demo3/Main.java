@@ -1,4 +1,4 @@
-package demo3;
+package demo_multithread.demo3;
 /*
 Локальная память потока, если есть общие данные для нескольких потоков
  */

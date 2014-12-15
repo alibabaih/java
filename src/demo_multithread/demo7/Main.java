@@ -1,4 +1,4 @@
-package demo7;
+package demo_multithread.demo7;
 
 import java.util.ArrayList;
 import java.util.List;

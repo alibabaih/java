@@ -1,5 +1,8 @@
-package demo1;
-
+package demo_multithread.demo2;
+/*
+Пишем класс, который из вне культурно
+завершается с помощью interrupted
+ */
 public class Main {
 
 	public static void main(String[] args) throws Exception {
@@ -32,9 +35,15 @@ public class Main {
 		//mt.join();
 
         //ждём 2-ой поток и обрубаем
-		omt.thread.join();
-                
-                System.out.println("end of main");
+		//omt.thread.join();
+
+        Thread.sleep(1000);
+        //после того, как подождал 1сек. говорим потоку omt завершиться
+
+        //omt.thread.interrupt(); //работает только на ожидание но не завершает процесс
+        omt.cancel = true;
+
+        System.out.println("end of main");
 	}
 
 }

@@ -1,5 +1,4 @@
-package demo4;
-import java.util.Random;
+package demo_multithread.demo4;
 /*
 Синхронизация потоков
  */

@@ -1,4 +1,4 @@
-package demo2;
+package demo_multithread.demo2;
 
 public class MyThread2 implements Runnable {
 	public Thread thread;

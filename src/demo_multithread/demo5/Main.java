@@ -1,4 +1,4 @@
-package demo5;
+package demo_multithread.demo5;
 /**
 Взаимодействие поков
  */

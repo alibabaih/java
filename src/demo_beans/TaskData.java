@@ -3,11 +3,17 @@ package demo_beans;
 import java.util.Calendar;
 import java.util.EventObject;
 
-/**
- * Created by l-vasil on 15.12.14.
- */
 public class TaskData extends EventObject {
     private String name;
+
+    public String getDate() {
+        return date;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     private String date;
 
     public TaskData(Object source, String name) {
